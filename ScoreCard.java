@@ -39,7 +39,7 @@ public class ScoreCard extends JFrame
 
 class ScoreCardJPanel extends JPanel
 {
-    private LowercardJpanel l;
+    private LowercardJPanel l;
     private UppercardJPanel u;
     //figure out pathway below
     ImageIcon win = new ImageIcon(src/hw)
@@ -389,8 +389,352 @@ class ScoreCardJPanel extends JPanel
 		 add(totalLOW);
 		 add(totalLOW2);
 	     }
-	     class ActionLowerYah implements ActionLiustener
+	     class ActionLowerYah implements ActionListener
 	     {
+	         public void actionPerformed(ActionEvent event)
+		 {
+		     boolean flag = false;
+		     //dice array
+		     int[] checkDice = countOnDice();
+		     for(int i = 0; i < 6; i++)
+		     {
+		         //look for 5 of a kind
+		         if(checkDice[i] == 5)
+			     flag = true;
+		     }
+                     if flag = true
+		     {
+		         lower[0] = 50;
+			 winnerGif.setVisible(true);
+	             }
+		     else
+		         lower[0] = 0;
+			 
+	             pYah.setText(String.valueOf(lower[0]));
+		     lpoints = pointsTally(lower);
+		     totalLO.setText(String.valueOf(lpoints));
+		     JButton source = (JButton) event.getSource();
+		     source.setEnabled(false);
+		     totalPoints = pointsTally(lower)+ pointsTally(upper);
+		     fTotal.setText(String.valueOf(totalPoints));
+		     turnTracker++;
+		 }
+	     }
+	     class ActionLowerlargeSt implements ActionListener
+	     {
+	         public void actionPerformed(ActionEvent event);
+		 {
+		     //boolean flag to check for large straigh
+		     boolean flag = true;
+		     //dice array
+		     int[] checkDice = countOnDice();
+		     //checks to see if theres a one
+		     if(checkDice[0] > 0)
+		     {
+		         for(int i = 1; i < 5; i++)
+			 {
+			     if(checkDice[i] < 1)
+			         flag = false;
+			 }
+		     }
+		     //looks for a two
+		     else if(checkDice[1] > 0)
+		     {
+		         for(int i = 2; i < 6; i++)
+			 {
+			     if(checkDice[i] < 1)
+			         flag = false;
+		         }
+		     }
+		     else
+		         flag = false;
+			 
+		    if(flag = true)
+		        lower[1] = 40;
+		    else 
+		        lower[1] = 0;
+		    
+		    plargeSt.setText(String.valueOf(lower[1]));
+		    lpoints = pointsTally(lower);
+		    totalLO.setText(String.valueOf(lpoints));
+		    JButton source = (JButton) event.getSource();
+		    source.setEnabled(false);
+		    totalPoints = pointsTally(lower)+ pointsTally(upper);
+		    fTotal.setText(String.valueOf(totalPoints));
+		    turnTracker++;
+	        }
+	    }
+	    class ActionLowersmallSt implements ActionListener
+	    {
+	        public void actionPerformed(ActionEvent event)
+		{
+		    boolean flag = true;
+		    //dice array
+		    int[] checkDice = countOnDice();
+		    //look for a one
+		    if(checkDice[0] > 0) 
+		    {
+		        //look for 2-4
+			for(int i = 1; i < 4; i++) 
+			{
+			    if(checkDice[i] < 1)
+		                flag = false;
+			}
+		    }
+		    //check for a 2
+		    else if(checkDice[1] > 0) 
+		    {
+		        //look for 3-5
+			for(int i = 2; i < 5; i++) 
+			{
+			    if(checkDice[i] < 1)
+			        flag = false;
+			}
+		
+		    }
+		    //check for a three
+		    else if(checkDice[2] > 0) 
+		    {
+		        //check for 4-6
+		        for(int i = 3; i < 6; i++) 
+		        {
+		            if(diceCheck[i] < 1)
+		       	        flag = false;
+		        }
+		    }
+		    else
+			flag = false;
+			
+		    	 
+		    if(flag = true)
+		        lower[2] = 40;
+		    else 
+		        lower[2] = 0;
+		    
+		    psmallSt.setText(String.valueOf(lower[2]));
+		    lpoints = pointsTally(lower);
+		    totalLO.setText(String.valueOf(lpoints));
+		    JButton source = (JButton) event.getSource();
+		    source.setEnabled(false);
+		    totalPoints = pointsTally(lower)+ pointsTally(upper);
+		    fTotal.setText(String.valueOf(totalPoints));
+		    turnTracker++;
+		}
+	    }
+	    class ActionLowerthreeofK implements ActionListener
+	    {
+	        public void actionPerformed(ActionEvent event)
+		{
+		    int[] checkDice = countOnDice();
+		    int value = 0;
+		    for(int i = 0; i < 6; i++)
+		    {
+		        //checks for 3 of a kind
+			if(diceCheck[i] >= 3) 
+			        //calculates that value
+			    value = (i+1)*3;	
+		    }
+		    lower[3] = value;
+		    pthreeofK.setText(String.valueOf(lower[3]));
+		    lpoints = pointsTally(lower);
+		    totalLO.setText(String.valueOf(lpoints));
+		    JButton source = (JButton) event.getSource();
+		    source.setEnabled(false);
+		    totalPoints = pointsTally(lower)+ pointsTally(upper);
+		    fTotal.setText(String.valueOf(totalPoints));
+		    turnTracker++;
+		}
+	    }
+	    class ActionLowerfourofK implements ActionListener
+	    {
+	        public void actionPerformed(ActionEvent event)
+		{
+		    //used for number on dice calculation
+		    int value = 0;
+		    //dice array
+		    int[] checkDice = countOnDice();
+		    for(int i = 0; i < 6; i++)
+		    {
+		        //checks to see if 4 of kind
+			if(diceCheck[i] >= 4) //checks for 4ofK
+			    //calculated value of dice roll with 4 of kind
+			    value = (i+1)*4;	
+		    }
+	            lower[4] = value;
+		    pfourofK.setText(String.valueOf(lower[4]));
+		    lpoints = pointsTally(lower);
+		    totalLO.setText(String.valueOf(lpoints));
+		    JButton source = (JButton) event.getSource();
+		    source.setEnabled(false);
+		    totalPoints = pointsTally(lower)+ pointsTally(upper);
+		    fTotal.setText(String.valueOf(totalPoints));
+		    turnTracker++;
+		}
+            }
+	    class ActionLowerfullHouse implements ActionListener
+	    {
+	        public void actionPerformed(ActionEvent event)
+		{
+		    //bool for tagging if theres a full house
+		    boolean flag = false;
+		    //dice array
+		    int[] checkDice = countOnDice();
+		    //checking for a full house
+		    for(int i = 0; i < 6; i++)
+		    {
+		        //first looks for 3 of a kind, then a pair
+		        if(checkDice[i] == 3)
+			{
+			    for(int j = 0; j < 6; j++)
+			    {
+				if(checkDice[j] == 2)
+				    flag = true;
+			    }
+			}
+			if(diceCheck[i] == 2) //checks for pair then 3ofK
+			{
+			    for(int j = 0; j < 6; j++)
+			    {
+				 if(diceCheck[j] == 3)
+				     flag = true;
+			    }
+			}
+		    }
+		    //if fh found, add 25 points to card
+		    if(flag = true)
+		        lower[5] = 25;
+		    else 
+		        lower[5] = 0;
+			
+	            lower[5] = value;
+		    pfullHouse.setText(String.valueOf(lower[5]));
+		    lpoints = pointsTally(lower);
+		    totalLO.setText(String.valueOf(lpoints));
+		    JButton source = (JButton) event.getSource();
+		    source.setEnabled(false);
+		    totalPoints = pointsTally(lower)+ pointsTally(upper);
+		    fTotal.setText(String.valueOf(totalPoints));
+		    turnTracker++;
+		}
+	    }
+	    class ActionLowerchance implements ActionListener
+	    {
+	        public void actionPerformed(ActionEvent event)
+		{
+		    //for caluclating sum of chance dice roll
+		    int value = 0;
+		    for(int i = 0; i < Dice.dice.length; i++)
+		    {
+		        //sum all dice in array
+			value += Dice.dice[i]; 
+		    }
+		    lower[6] = value;
+		    pchance.setText(String.valueOf(lower[6]));
+		    lpoints = pointsTally(lower);
+		    totalLO.setText(String.valueOf(lpoints));
+		    JButton source = (JButton) event.getSource();
+		    source.setEnabled(false);
+		    totalPoints = pointsTally(lower)+ pointsTally(upper);
+		    fTotal.setText(String.valueOf(totalPoints));
+		    turnTracker++;
+		}
+            }
+	}
+	public ScoreCardJPanel()
+	{
+	    setBackground(bC);
+	    setPreferredSize(new Dimension(500, 600));
+	    //add lower scorecard to total
+	    l = new LowercardJPanel();
+	    l.setPreferredSize(new Dimension(225, 320));
+	    add(l);
+	    //add upper scorecard to total
+	    setLayout(new FlowLayout());
+	    u = new UppercardJPanel();
+	    u.setPreferredSize(new Dimension(175, 300));
+	    add(u);
+	    //final totals
+	    finalTotal = new JLabel("Grand Total: ");
+	    finalTotal.setFont(new Font("Calibri, Font.PLAIN, 18));
+	    add(finalTotal);
+	    //calculate final totals and put on scorecard
+	    totalPoints = pointsTally(lower)+pointsTally(upper);
+	    fTotal = new JLabel(String.valueOf(totalPoints));
+	    fTotal.setFont(new Font("Calibri, Font.PLAIN, 18));
+	    add(fTotal);
+	    
+	    winner.setImage(winner.getImage().getScaledInstance(200, 150, Image.SCALE_DEFAULT));
+	    winnerGif = new JLabel(winner);
+	    add(winnerGif);
+	    winnerGif.setVisible(false);
+        }
+	//calculates sum on dice roll
+	int diceSum(int val)
+	{
+	    int sum = 0;
+	    for(int i = 0; i < Dice.dice.length; i++)
+	    {
+		if(Dice.dice[i] == val)
+		//sum all rolls for the die
+		sum += val; 
+	    }
+	    //return the sum value
+	    return sum; 
+	}
+	//tallys the points
+	int pointsTally (int [] numPoints)
+	{
+		points = 0;
+		//sum whole array
+		for(int i = 0; i < score.length; i++)
+		{
+			points += numPoints[i];
+		}
+		//return sum of points
+		return points; 
+	}
+	//stores number on each dice into array
+	int[] countOnDice()
+	{
+	    int[] checkDice = new int[6];
+	    for(int i = 0; i < Dice.dice.length; i++)
+	    {
+	        if(Dice.dice[i] == 1)
+		    checkDice[0]++;					
+
+		if(Dice.dice[i] == 2)
+		    checkDice[1]++;					
+			
+		if(Dice.dice[i] == 3)
+		    checkDice[2]++;					
+		
+	        if(Dice.dice[i] == 4)
+		    checkDice[3]++;					
+		
+		if(Dice.dice[i] == 5)
+		    checkDice[4]++;					
+		
+	        if(Dice.dice[i] == 6)
+		    checkDice[5]++;
+	     }
+	     //return array
+             return checkDice; 
+	}
+	    
+	        
+		    
+		    
+	    
+   
+		 
+		
+		
+		
+		     
+		     
+		     
+
+			    
 	 
 		    
 	    
