@@ -143,8 +143,242 @@ public class Dice extends JFrame
             switch(x)
             {
                 case 1:
-                    icon = new ImageIcon(getClass().getResource("die1.png"))
+                    icon = new ImageIcon(getClass().getResource("die1.png"));
                     label = new JLabel(icon);
+                    add(label);
+                    label.addMouseListener(new MouseAdapter()
+                    {
+                        public void mouseClicked(MouseEvent mouseevent)
+                        {
+                            diceSelected.add(valueOnDie);
+                            label.setVisible(false);
+                        }
+                    })
+                    break;
+                case 2:
+                     icon = new ImageIcon(getClass().getResource("die2.png"));
+                    label = new JLabel(icon);
+                    add(label);
+                    label.addMouseListener(new MouseAdapter()
+                    {
+                        public void mouseClicked(MouseEvent mouseevent)
+                        {
+                            diceSelected.add(valueOnDie);
+                            label.setVisible(false);
+                        }
+                    })
+                    break;
+                case 3:
+                     icon = new ImageIcon(getClass().getResource("die3.png"));
+                    label = new JLabel(icon);
+                    add(label);
+                    label.addMouseListener(new MouseAdapter()
+                    {
+                        public void mouseClicked(MouseEvent mouseevent)
+                        {
+                            diceSelected.add(valueOnDie);
+                            label.setVisible(false);
+                        }
+                    })
+                    break;
+                case 4:
+                     icon = new ImageIcon(getClass().getResource("die4.png"));
+                    label = new JLabel(icon);
+                    add(label);
+                    label.addMouseListener(new MouseAdapter()
+                    {
+                        public void mouseClicked(MouseEvent mouseevent)
+                        {
+                            diceSelected.add(valueOnDie);
+                            label.setVisible(false);
+                        }
+                    })
+                    break;
+               case 5:
+                     icon = new ImageIcon(getClass().getResource("die5.png"));
+                    label = new JLabel(icon);
+                    add(label);
+                    label.addMouseListener(new MouseAdapter()
+                    {
+                        public void mouseClicked(MouseEvent mouseevent)
+                        {
+                            diceSelected.add(valueOnDie);
+                            label.setVisible(false);
+                        }
+                    })
+                    break;
+            }
+        }
+        //set icon to jlabel
+        public void setIHeld(singleDie die, int x);
+        {
+            switch(x)
+            {
+                   case 1:
+                       if(label == null)
+                       {
+                            label = new JLabel();
+                            //image update
+                            die.label.setIcon(new ImageIcon(getClass().getResource("die1.png")));
+                            add(die.label);
+                        }
+                        if(label != null)
+                        {
+                            die.label.setIcon(new ImageIcon(getClass().getResource("die1.png")));
+                        }
+                        break;
+                    case 2:
+                        if(label == null)
+                        {
+                            label = new JLabel();
+                            //image update
+                            die.label.setIcon(new ImageIcon(getClass().getResource("die2.png")));
+                            add(die.label);
+                        }
+                        if(label != null)
+                        {
+                            die.label.setIcon(new ImageIcon(getClass().getResource("die2.png")));
+                        }
+                        break;
+                    case 3:
+                        if(label == null)
+                        {
+                            label = new JLabel();
+                            //image update
+                            die.label.setIcon(new ImageIcon(getClass().getResource("die3.png")));
+                            add(die.label);
+                        }
+                        if(label != null)
+                        {
+                            die.label.setIcon(new ImageIcon(getClass().getResource("die3.png")));
+                        }
+                        break;
+                    case 4:
+                        if(label == null)
+                        {
+                            label = new JLabel();
+                            //image update
+                            die.label.setIcon(new ImageIcon(getClass().getResource("die4.png")));
+                            add(die.label);
+                        }
+                        if(label != null)
+                        {
+                            die.label.setIcon(new ImageIcon(getClass().getResource("die4.png")));
+                        }
+                        break;
+                    case 5:
+                        if(label == null)
+                        {
+                            label = new JLabel();
+                            //image update
+                            die.label.setIcon(new ImageIcon(getClass().getResource("die5.png")));
+                            add(die.label);
+                        }
+                        if(label != null)
+                        {
+                            die.label.setIcon(new ImageIcon(getClass().getResource("die5.png")));
+                        }
+                        break;
+            }
+        }
+    }
+    //shoes the dice being held
+    void diceHeld(singularDie die, int x)
+    {
+        die.setIHeld(die,x);
+        die(label.setVisible(true);
+    }
+    //before restarting make false
+    void restartf(singularDie die)
+    {
+        die.label.setVisible(false);
+    }
+    //after restart make true
+    void restartt(singularDie die)
+    {
+       die.label.setVisible(true);
+    }
+    //if held dice is true set die to false for restart
+    void heldRestart(singularDie die)
+    {
+        if(die.label.isVisible() == true)
+            die.label.setVisible(false);
+    }
+    void Restart(singularDie die)
+    {
+        Random rand = new Random();
+        int randNum = rand.nextInt(5)+1;
+        
+        if(randNum == 0)
+            randNum = randNum + 1;
+           
+        //set die values with random num
+        die.setValueOnDie(randNum);
+        switch(randNum)
+        {
+            case 1:
+                die.label.setIcon(new ImageIcon(getClass().getResource("die1.png")));
+                break;
+            case 2:
+                die.label.setIcon(new ImageIcon(getClass().getResource("die2.png")));
+                break;
+            case 3:
+                die.label.setIcon(new ImageIcon(getClass().getResource("die3.png")));
+                break;
+            case 4:
+                die.label.setIcon(new ImageIcon(getClass().getResource("die4.png")));
+                break;
+            case 5:
+                die.label.setIcon(new ImageIcon(getClass().getResource("die5.png")));
+                break;
+         }
+     }
+     
+     void Reroll(singularDie die)
+     {
+         //make sure die has not been clicked already
+         if(die.isVisible() != false)
+         {
+             Random rand = new Random();
+             int randNum = rand.nextInt(5)+1;
+             
+             if(randNum == 0)
+                 randNum = randNum + 1;
+                 
+             //set value on die to new random num
+             switch(randNum)
+             {
+                 case 1:
+                    die.label.setIcon(new ImageIcon(getClass().getResource("die1.png")));
+                    break;
+                 case 2:
+                    die.label.setIcon(new ImageIcon(getClass().getResource("die2.png")));
+                    break;
+                 case 3:
+                    die.label.setIcon(new ImageIcon(getClass().getResource("die3.png")));
+                   break;
+                 case 4:
+                    die.label.setIcon(new ImageIcon(getClass().getResource("die4.png")));
+                   break;
+                 case 5:
+                    die.label.setIcon(new ImageIcon(getClass().getResource("die5.png")));
+                  break;
+            }
+       }
+   }
+   public Dice()
+   {
+       
+             
+             
+         
+                 
+            
+            
+                    
+                
+                
+                    
         
             
        
@@ -152,3 +386,8 @@ public class Dice extends JFrame
     
     
     
+        
+    
+
+                            
+                            
