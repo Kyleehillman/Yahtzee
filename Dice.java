@@ -54,7 +54,100 @@ public class Dice extends JFrame
     {
         boolean visible;
         int valueOnDie;
-        private int numOnDie;
+        private int dieNum;
+        public JLabel label;
+        public JLabel icon;
+        
+        public singleDie()
+        {
+        
+        }
+        
+        public int getDieNum(JLabel singleDie)
+        {
+            return dieNum;
+        }
+        public int getDieVal()
+        {
+            return valueOnDie;
+        }
+        public void visibile()
+        {
+            label.setVisible(true);
+        }
+        
+        public void notVisible()
+        {
+            label.setVisible(false);
+        }
+        
+        //sets die values
+        public void setValueOnDie(int x)
+        {
+            if(x == 1)
+            {
+                valueOnDie = 1;
+            }
+            else if(x == 2)
+            {
+                valueOnDie = 2;
+            }
+            else if(x == 3)
+            {
+                valueOnDie = 3;
+            }
+            else if(x == 4)
+            {
+                valueOnDie = 4;
+            }
+            else if(x == 5)
+            {
+                valueOnDie = 5;
+            }
+            else if(x == 6)
+            {
+                valueOnDie = 6;
+            }
+        }
+        //sets die numbers
+        public void setDieNumber(int x)
+        {
+            if(x == 1)
+            {
+                dieNum = 1;
+            }
+            else if(x == 2)
+            {
+                dieNum = 2;
+            }
+            else if(x == 3)
+            {
+                dieNum = 3;
+            }
+            else if(x == 4)
+            {
+                dieNum = 4;
+            }
+            else if(x == 5)
+            {
+                dieNum = 5;
+            }
+            else if(x == 6)
+            {
+                dieNum = 6;
+            }
+        }
+        //used given number to set icon to jlabel
+        public void setIcon(int x)
+        {
+            switch(x)
+            {
+                case 1:
+                    icon = new ImageIcon(getClass().getResource("die1.png"))
+                    label = new JLabel(icon);
+        
+            
+       
       
     
     
