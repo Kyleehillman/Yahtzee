@@ -368,6 +368,93 @@ public class Dice extends JFrame
    }
    public Dice()
    {
+       setLayout(new FlowLayout());
+       super("Yahtzee Dice);
+       getContentPane().setBackground(cardCol);
+       
+       roll = new JButton("Roll the dice");
+       doneroll = new JButton("Done rolling");
+       newroll = new JButton("New roll");
+       roll = setFont(new Font("Calibri, Font.PLAIN, 12));
+       doneroll = setFont(new Font("Calibri, Font.PLAIN, 12));
+       newroll = setFont(new Font("Calibri, Font.PLAIN, 12));
+       roll.setBounds(100,100,50,60);
+       doneroll.setBounds(100,100,50,60);
+       newroll.setBounds(100,100,50,60);
+       newroll.setVisible(false);
+       add(roll);
+       add(doneroll);
+       add(newroll);
+       
+       Random dNum1 = new Random();
+       Random dNum2 = new Random();
+       Random dNum3 = new Random();
+       Random dNum4 = new Random();
+       Random dNum5 = new Random();
+       
+       die1 = newImageIcon(getClass().getResource("die1.png"));
+       die2 = newImageIcon(getClass().getResource("die2.png"));
+       die3 = newImageIcon(getClass().getResource("die3.png"));
+       die4 = newImageIcon(getClass().getResource("die4.png"));
+       die5 = newImageIcon(getClass().getResource("die5.png"));
+       
+       //get values from rolls and ensure theyre not 0
+       d1num = dNum1.nextInt(5)+1;
+       if(die1 == 0)
+           die1 += 1;
+           
+       d2num = dNum2.nextInt(5)+1;
+       if(die2 == 0)
+           die2 += 1;
+           
+       d3num = dNum3.nextInt(5)+1;
+       if(die3 == 0)
+           die3 += 1;
+           
+       d4num = dNum4.nextInt(5)+1;
+       if(die4 == 0)
+           die4 += 1;
+           
+       d5num = dNum5.nextInt(5)+1;
+       if(die5 == 0)
+           die5 += 1;
+           
+       //set dice num, value on dice and icons
+       dice1.setDieNumber(1);
+       dice1.setValueOnDie(d1num);
+       dice1.SetIcon(d1num);
+       dice2.setDieNumber(2);
+       dice2.setValueOnDie(d2num);
+       dice2.SetIcon(d2num);
+       dice3.setDieNumber(3);
+       dice3.setValueOnDie(d3num);
+       dice3.SetIcon(d3num);
+       dice4.setDieNumber(4);
+       dice4.setValueOnDie(d4num);
+       dice4.SetIcon(d4num);
+       dice5.setDieNumber(5);
+       dice5.setValueOnDie(d5num);
+       dice5.SetIcon(d5num);
+       
+       DiceTracker tracker = new DiceTracker();
+       roll.addActionListener(tracker);
+       doneroll.addActionListener(tracker);
+       newroll.addActionListener(tracker);
+       
+       //jlabel for held dice
+       keptDice = new JLabel("Dice being held:");
+       keptDice.setFont(new Font("Calibri", Font.PLAIN, 12));
+       add(keptDice);
+       keptDice.setVisible(false);
+   }
+         
+      
+       
+       
+       
+       
+       
+       
        
              
              
