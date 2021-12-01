@@ -132,10 +132,7 @@ public class Dice extends JFrame
             {
                 dieNum = 5;
             }
-            else if(x == 6)
-            {
-                dieNum = 6;
-            }
+            
         }
         //used given number to set icon to jlabel
         public void setIcon(int x)
@@ -277,6 +274,19 @@ public class Dice extends JFrame
                         if(label != null)
                         {
                             die.label.setIcon(new ImageIcon(getClass().getResource("die5.png")));
+                        }
+                        break;
+                    case 6:
+                        if(label == null)
+                        {
+                            label = new JLabel();
+                            //image update
+                            die.label.setIcon(new ImageIcon(getClass().getResource("die6.png")));
+                            add(die.label);
+                        }
+                        if(label != null)
+                        {
+                            die.label.setIcon(new ImageIcon(getClass().getResource("die6.png")));
                         }
                         break;
             }
