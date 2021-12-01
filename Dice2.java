@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.*;
 
-public class Dice extends JFrame
+public class Dice2 extends JFrame
 {
     private Color cardCol = new Color(255,102,0);
     private int numOnDice1;
