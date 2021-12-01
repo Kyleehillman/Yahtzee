@@ -2,11 +2,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.*;
 
-public class Dice extends JFrame
+public class Dice
 {
-  public class Die extends JFrame
+  public class Die
   {
     protected int value;
+    protected ImageIcon image;
     protected JLabel icon;
     
     private Random generator = new Random ();
@@ -28,24 +29,32 @@ public class Dice extends JFrame
       switch (val)
       {
         case 1:
-          // set icon to die1.png
+          image = new ImageIcon (getClass ().getResource ("die1.png"));
+          icon = new JLabel (image);
           break;
         case 2:
-          // set icon to die2.png
+          image = new ImageIcon (getClass ().getResource ("die2.png"));
+          icon = new JLabel (image);
           break;
         case 3:
-          // set icon to die3.png
+          image = new ImageIcon (getClass ().getResource ("die3.png"));
+          icon = new JLabel (image);
           break;
         case 4:
-          // set icon to die4.png
+          image = new ImageIcon (getClass ().getResource ("die4.png"));
+          icon = new JLabel (image);
           break;
         case 5:
-          // set icon to die5.png
+          image = new ImageIcon (getClass ().getResource ("die5.png"));
+          icon = new JLabel (image);
           break;
         case 6:
-          // set icon to die6.png
+          image = new ImageIcon (getClass ().getResource ("die6.png"));
+          icon = new JLabel (image);
           break;
       }
     }
   }
+  
+  
 }
