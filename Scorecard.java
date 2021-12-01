@@ -1,6 +1,6 @@
 import java.awt.event*;
-import java.awt.Color;
-import java.awt.GridLayout;
+//import java.awt.Color;
+//import java.awt.GridLayout;
 import javax.swing*;
 import java.awt.Dimension;
 
