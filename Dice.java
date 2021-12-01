@@ -1,19 +1,6 @@
-import javax.swing*;
-import javax.JLabel;
-import javax.JTextField;
-import javax.swing.JFrame;
-import javax.swing.JPasswordField;
-import javax.swing.JOptionPane;
-import java.awt.FlowLayout;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.util.Random;
-import java.awt.Color;
-import java.awt.Font;
-import java.util.Arrays;
-import java.util.Vector;
-import java.awt.event.*;
 import javax.swing.*;
+import java.awt.*;
+import java.util.*;
 
 public class Dice extends JFrame
 {
@@ -153,7 +140,7 @@ public class Dice extends JFrame
                     })
                     break;
                 case 2:
-                     icon = new ImageIcon(getClass().getResource("die2.png"));
+                    icon = new ImageIcon(getClass().getResource("die2.png"));
                     label = new JLabel(icon);
                     add(label);
                     label.addMouseListener(new MouseAdapter()
@@ -166,7 +153,7 @@ public class Dice extends JFrame
                     })
                     break;
                 case 3:
-                     icon = new ImageIcon(getClass().getResource("die3.png"));
+                    icon = new ImageIcon(getClass().getResource("die3.png"));
                     label = new JLabel(icon);
                     add(label);
                     label.addMouseListener(new MouseAdapter()
@@ -179,7 +166,7 @@ public class Dice extends JFrame
                     })
                     break;
                 case 4:
-                     icon = new ImageIcon(getClass().getResource("die4.png"));
+                    icon = new ImageIcon(getClass().getResource("die4.png"));
                     label = new JLabel(icon);
                     add(label);
                     label.addMouseListener(new MouseAdapter()
@@ -192,7 +179,7 @@ public class Dice extends JFrame
                     })
                     break;
                case 5:
-                     icon = new ImageIcon(getClass().getResource("die5.png"));
+                    icon = new ImageIcon(getClass().getResource("die5.png"));
                     label = new JLabel(icon);
                     add(label);
                     label.addMouseListener(new MouseAdapter()
