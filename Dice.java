@@ -5,7 +5,6 @@ import java.util.*;
 public class Dice extends JFrame
 {
     private Color cardCol = new Color(255,102,0);
-    private int diceNumber;
     private int numOnDice1;
     private int numOnDice2;
     private int numonDice3;
