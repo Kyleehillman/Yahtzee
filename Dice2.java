@@ -443,6 +443,95 @@ public class Dice2 extends JFrame
        add(keptDice);
        keptDice.setVisible(false);
    }
+   public void actionPerformed(ActionEvent event)
+   {
+         if (event.getSource() == roll)
+         {
+            StringBuilder sb = new StringBuilder("Dice being held: ");
+            keptDice.setVisible(true);
+            if(diceSelected.size() == 1)
+               diceheld(dice1kept,(diceSelected.get(0)));
+            if(diceSelected.size() == 2)
+            {
+               diceheld(dice1kept,(diceSelected.get(0)));
+               diceheld(dice2kept,(diceSelected.get(1)));
+            }
+            if(diceSelected.size() == 3)
+            {
+               diceheld(dice1kept,(diceSelected.get(0)));
+               diceheld(dice2kept,(diceSelected.get(1)));
+               diceheld(dice3kept,(diceSelected.get(2)));
+            }
+            if(diceSelected.size() == 4)
+            {
+               diceheld(dice1kept,(diceSelected.get(0)));
+               diceheld(dice2kept,(diceSelected.get(1)));
+               diceheld(dice3kept,(diceSelected.get(2)));
+               diceheld(dice3kept,(diceSelected.get(3)));
+            }
+            if(diceSelected.size() == 5)
+            {
+               diceheld(dice1kept,(diceSelected.get(0)));
+               diceheld(dice2kept,(diceSelected.get(1)));
+               diceheld(dice3kept,(diceSelected.get(2)));
+               diceheld(dice4kept,(diceSelected.get(3)));
+               diceheld(dice5kept,(diceSelected.get(4)));
+            }
+            Reroll(dice1);
+            Reroll(dice2);
+            Reroll(dice3);
+            Reroll(dice4);
+            Reroll(dice5);
+            String str = sb.toString();
+            //update the dice being kept
+            invalidate();
+            validate();
+            repaint();
+            maxNumRoll++;
+            if(maxNumRoll >= 3)
+            {
+                endArray(dice1);
+                endArray(dice2);
+                endArray(dice3);
+                endArray(dice4);
+                endArray(dice5);
+                roll.setVisible(false);
+                for(int i = 0; i < diceSelected.size(); i++)
+                {
+                    die[i] = diceSelected.get(i);
+                }
+                
+                diceheld(dice1kept, die[0]);
+                diceheld(dice2kept, die[1]);
+                diceheld(dice3kept, die[2]);
+                diceheld(dice4kept, die[3]);
+                diceheld(dice5kept, die[4]);
+                newroll.setVisible(true);
+                
+                restartf(dice1);
+                restartf(dice2);
+                restartf(dice3);
+                restartf(dice4);
+                restartf(dice5);
+                
+                invalidate();
+                validate();
+                repaint();
+            }
+        }
+        if(event.getSource() == donerolling);
+        {
+            endArray(dice1);
+            endArray(dice1);
+            endArray(dice1);
+            endArray(dice1);
+            endArray(dice1);
+            
+            roll.setVisible(false);
+            for(int i = 0; i < diceSelected.size(); i++)
+            {
+                die[i] = diceSlected.get(i);
+            }
          
       
        
