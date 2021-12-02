@@ -49,4 +49,9 @@ public class Dice
       }
     } 
   }
+  
+  public int getValue (int index)
+  {
+    return dice[index];
+  }
 }
