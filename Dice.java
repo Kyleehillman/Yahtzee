@@ -31,10 +31,9 @@ public class Dice
     
     for (int i = 0; i < 5; i++)
     {
+      dice[i] = new Die ();
       hold[i] = false;
     }
-    
-    Roll ();
   }
   
   public void Roll ()
@@ -57,5 +56,15 @@ public class Dice
     die = dice[index];
     
     return die.value;
+  }
+  
+  public void setHold (int index)
+  {
+    hold[index] = true;
+  }
+  
+  public void unsetHold (int index)
+  {
+    hold[index] = false;
   }
 }
