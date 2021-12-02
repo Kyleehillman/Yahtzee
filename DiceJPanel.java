@@ -7,14 +7,14 @@ public class DiceJPanel extends JPanel implements ActionListener
   {
     Dice dice = new Dice ();
     
-    ImageIcon = image;
+    ImageIcon image;
     
-    JButton diceButton;
+    JButton die1, die2, die3, die4, die5;
     JButton rollButton;
   
     setPrefferedSize (new Dimension (1500, 500));
     
-    GridLayout diceGrid = new GridLayout (1, 5, 20, 0);
+    setLayout (new GridLayout (1, 5, 20, 0));
     
     for (int i = 0; i < 5; i++)
     {
@@ -38,13 +38,41 @@ public class DiceJPanel extends JPanel implements ActionListener
       {
         image = new ImageIcon (getClass ().getResource ("die5.png"));
       }
-      else if (dice.getValue (i) == 6)
+      else
       {
         image = new ImageIcon (getClass ().getResource ("die6.png"));
       }
       
-      diceButton = new JButton (image);
-      add (diceButton);
+      if (i == 0)
+      {
+        die1 = new JButton (image);
+        add (die1);
+        die1.setVisible (true);
+      }
+      else if (i == 1)
+      {
+        die2 = new JButton (image);
+        add (die2);
+        die2.setVisible (true);
+      }
+      else if (i == 2)
+      {
+        die3 = new JButton (image);
+        add (die3);
+        die3.setVisible (true);
+      }
+      else if (i == 3)
+      {
+        die4 = new JButton (image);
+        add (die4);
+        die4.setVisible (true);
+      }
+      else
+      {
+        die5 = new JButton (image);
+        add (die5);
+        die5.setVisible (true);
+      }
     }
   }
 }
