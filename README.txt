@@ -13,7 +13,7 @@ between standard implementation and our game is that our game has 2 rolls and st
 has 3.
 
 We all contributed to all parts of this assignment. Kylee did the initial design               
-and ideas of the program and then everyone helped to edit it and Andrew typed         
+and ideas of the program and then Andrew and Dori redesigned it. Andrew typed         
 the new design to finalize it while everyone chimed in. Afterwards we all helped               
 edit and plan the ideas for the graphics. Dori started the write up and everyone               
 added to it. We all equally helped with the powerpoint and the README.txt.
