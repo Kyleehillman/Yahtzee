@@ -16,4 +16,7 @@ We all contributed to all parts of this assignment. Kylee did the initial design
 and ideas of the program and then Andrew and Dori redesigned it. Andrew typed         
 the new design to finalize it while everyone chimed in. Afterwards we all helped               
 edit and plan the ideas for the graphics. Dori started the write up and everyone               
-added to it. We all equally helped with the powerpoint and the README.txt.
+added to it. We all equally helped with the powerpoint and the README.txt. Dori did
+slides 2 and 6. Kylee did slides 3 and 4. Andrew did slides 5 and 6. We all wrote 
+scripts for our individual slides and then Dori recorded the audio and presentation
+becuase we could not all record it.
