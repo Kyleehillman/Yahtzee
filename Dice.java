@@ -41,7 +41,7 @@ public class Dice
   
   public void setHold (int index)
   {
-    hold[index] = true;             ///set true if player wants to keep
+    hold[index] = true;             //set true if player wants to keep
   } 
   
   public void unsetHold (int index)
